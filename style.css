@@ -245,14 +245,17 @@ body .popupLayer2 .popupBox {
 }
 
 body header {
-  height: 600px;
+  height: 100vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column
 }
 
 body header .nav {
   padding: 0 50px;
   font-weight: 700;
-  font-size: 60px;
+  font-size: 85px;
   height: 200px;
   display: flex;
   align-items: flex-end;
@@ -279,7 +282,7 @@ body header .bgBottomIcon {
 
 body header .headerContent {
   padding: 20px;
-  height: calc(100% - 200px);
+  /* height: calc(100% - 200px); */
   display: flex;
   align-items: center;
 }
