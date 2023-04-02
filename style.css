@@ -44,12 +44,12 @@ body .photoGallerySectionMobile .subtitle {
 }
 
 body .photoGallerySectionMobile .photoContainer {
-  margin-top: 50px;
+  /* margin-top: 50px; */
   background-color: rgba(127, 17, 224, 0.2);
-  padding: 50px;
+  padding: 0 50px 0 50px;
   width: 100%;
   overflow: auto;
-  height: 500px;
+  /* height: 500px; */
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
   /* IE and Edge */
@@ -61,7 +61,7 @@ body .photoGallerySectionMobile .photoContainer::-webkit-scrollbar {
 }
 
 body .photoGallerySectionMobile .photoContainer #innerPhotoContainer {
-  display: flex;
+  display: none;
   overflow: auto;
   gap: 20px;
   width: -moz-fit-content;
@@ -69,11 +69,8 @@ body .photoGallerySectionMobile .photoContainer #innerPhotoContainer {
   height: 100%;
   overflow-y: hidden;
   transition: all ease 1000ms;
-  /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 body .photoGallerySectionMobile .photoContainer #innerPhotoContainer::-webkit-scrollbar {
@@ -987,8 +984,12 @@ body .websiteLink:visited {
     font-weight: 500;
     position: relative;
   }
+  #photoRow {
+    display: none;
+  }
 
   body .photoGallerySectionMobile .photoContainer {
+    display: block;
     margin-top: 20px;
     width: 100%;
     overflow: auto;
@@ -1220,3 +1221,100 @@ body .websiteLink:visited {
 }
 
 /*# sourceMappingURL=style.css.map */
+.row {
+  display: -ms-flexbox;
+  /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap;
+  /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 20%;
+  /* IE 10 */
+  flex: 20%;
+  position: relative;
+  /* padding: 0 4px; */
+}
+
+.column img {
+  /* margin-top: 8px; */
+  vertical-align: middle;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.image1 {
+  width: 100%;
+  z-index: 2;
+  margin-left: 10%;
+  object-fit: cover;
+}
+
+.image2 {
+  width: 100%;
+  height: 39%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.image3 {
+  width: 90%;
+  margin-left: auto;
+  object-fit: cover;
+  z-index: 1;
+  object-position: top;
+}
+
+.image4 {
+  width: 100%;
+  object-fit: cover;
+  height: 19%;
+  object-position: top;
+  margin-top: 80%;
+}
+
+.image5 {
+  width: 100%;
+  object-fit: cover;
+  height: 23%;
+  object-position: top;
+}
+
+.image6 {
+  width: 100%;
+  height: 22%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.image7 {
+  width: 100%;
+  height: 18%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.image8 {
+  width: 80%;
+  /* height: 18%; */
+  object-fit: cover;
+  object-position: top;
+}
+
+.image9 {
+  width: 100%;
+  /* height: 18%; */
+  object-fit: cover;
+  object-position: top;
+  margin-left: -7%;
+  z-index: 2;
+}

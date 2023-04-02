@@ -126,6 +126,89 @@ async function getCreators(url) {
     let data = await res.json();
 
     creatorsArray = data;
+    // const creatorsArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
+    const groupSize = 9;
+    // console.log(creatorsArray);
+
+    if (creatorsArray.length >= groupSize) {
+        for (let i = 0; i < Math.ceil(creatorsArray.length / groupSize); i++) {
+            const groupStart = i * groupSize;
+            const groupEnd = (i + 1) * groupSize;
+            // console.log(groupStart % creatorsArray.length, groupEnd % creatorsArray.length);
+            groupStartSlice = groupStart % creatorsArray.length;
+            groupEndSlice = groupEnd % creatorsArray.length;
+            let group = [];
+            if (groupStartSlice > groupEndSlice) {
+                group = creatorsArray.slice(groupStartSlice);
+                group.push(...creatorsArray.slice(0, groupEndSlice))
+            } else {
+                group = creatorsArray.slice(groupStart % creatorsArray.length, groupEnd % creatorsArray.length);
+            }
+            // const photoRow = document.getElementById("photoRow");
+            let divRow = document.createElement('div');
+            divRow.setAttribute('class', 'row');
+            // divRow.setAttribute('class', 'item');
+            // divRow.setAttribute('class', 'creatorCard');
+            divRow.setAttribute('id', 'photoRow');
+            divRow.innerHTML = `
+                <div class="column">
+                    <div class="center">
+                        <a href="${group[0].instagram_link}" target="_blank">
+                            <img class="image1" src="${group[0].creator_img}" style="width: 100%" />
+                        </a>
+                    </div>
+                    </a>
+                </div>
+                <div class="column">
+                    <div style="margin-top: 50%">
+                        <a href="${group[1].instagram_link}" target="_blank">
+                            <img class="image2" src="${group[1].creator_img}" style="width: 100%" />
+                        </a>
+                        <a href="${group[2].instagram_link}" target="_blank">
+                            <img class="image3" src="${group[2].creator_img}" style="width: 100%" />
+                        </a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="" style="height: 100%">
+                        <a href="${group[3].instagram_link}" target="_blank">
+                            <img class="image4" src="${group[3].creator_img}" style="width: 100%" />
+                        </a>
+                        <a href="${group[4].instagram_link}" target="_blank">
+                            <img class="image5" src="${group[4].creator_img}" style="width: 100%" />
+                        </a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div style="margin-top: 50%; height: 100%">
+                        <a href="${group[5].instagram_link}" target="_blank">
+                            <img class="image6" src="${group[5].creator_img}" style="width: 100%" />
+                        </a>
+                        <a href="${group[6].instagram_link}" target="_blank">
+                            <img class="image7" src="${group[6].creator_img}" style="width: 100%" />
+                        </a>
+                        <a href="${group[7].instagram_link}" target="_blank">
+                            <img class="image8" src="${group[7].creator_img}" />
+                        </a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="center">
+                        <a href="${group[8].instagram_link}">
+                            <img class="image9" src="${group[8].creator_img}" style="width: 100%" />
+                        </a>
+                    </div>
+                </div>
+            `;
+            // console.log(`Group ${i + 1}: ${group}`);
+            // console.log(divRow);
+            document.getElementById("photoRow").appendChild(divRow)
+            // let test = document.createElement('img')
+            // test.setAttribute('src', group[0].creator_img)
+            // document.getElementById("carousel-inner").appendChild(test)
+            break;
+        }
+    }
 
     for (let i = 0; i < creatorsArray.length; i++) {
         let card = document.createElement('a');
@@ -139,29 +222,29 @@ async function getCreators(url) {
     }
 }
 
-let i = 1;
-if (screen.width > "768") {
-    setInterval(() => {
-        let innerPhotoContainer = document.getElementById("innerPhotoContainer");
-        if (i === creatorsArray.length - 2) {
-            i = 1;
-        } else {
-            innerPhotoContainer.style.transform = `translateX(${-400 * i}px )`;
-            i++;
-        }
-    }, 5000);
-} else {
-    setInterval(() => {
-        let innerPhotoContainer = document.getElementById("innerPhotoContainer");
-        if (i === creatorsArray.length - 2) {
-            i = 1;
-        } else {
-            innerPhotoContainer.style.transform = `translateX(${-200 * i}px )`;
-            i++;
-        }
-    }, 5000);
+// let i = 1;
+// if (screen.width > "768") {
+//     setInterval(() => {
+//         let innerPhotoContainer = document.getElementById("innerPhotoContainer");
+//         if (i === creatorsArray.length - 2) {
+//             i = 1;
+//         } else {
+//             innerPhotoContainer.style.transform = `translateX(${-400 * i}px )`;
+//             i++;
+//         }
+//     }, 5000);
+// } else {
+//     setInterval(() => {
+//         let innerPhotoContainer = document.getElementById("innerPhotoContainer");
+//         if (i === creatorsArray.length - 2) {
+//             i = 1;
+//         } else {
+//             innerPhotoContainer.style.transform = `translateX(${-200 * i}px )`;
+//             i++;
+//         }
+//     }, 5000);
 
-}
+// }
 
 function isDesktop() {
     let details = navigator.userAgent;
