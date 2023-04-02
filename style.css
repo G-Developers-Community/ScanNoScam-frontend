@@ -48,7 +48,7 @@ body .photoGallerySectionMobile .photoContainer {
   background-color: rgba(127, 17, 224, 0.2);
   padding: 0 50px 0 50px;
   width: 100%;
-  overflow: auto;
+  /* overflow: auto; */
   /* height: 500px; */
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
