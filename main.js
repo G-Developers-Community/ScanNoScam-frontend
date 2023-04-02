@@ -237,7 +237,7 @@ if (screen.width > "768") {
             innerPhotoContainer.scrollLeft += window.innerWidth-100
             i++;
         }
-    }, 2000);
+    }, 5000);
 } else {
     setInterval(() => {
         let innerPhotoContainer = document.getElementById("innerPhotoContainer");
