@@ -252,11 +252,12 @@ body header {
 body header .nav {
   padding: 0 50px;
   font-weight: 700;
-  font-size: 90px;
+  font-size: 110px;
   height: 200px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  text-align: center;
 }
 
 body header .bgTopIcon {
@@ -295,7 +296,7 @@ body header .headerContent .center {
 
 body header .headerContent .center h1 {
   margin-bottom: 20px;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -868,7 +869,7 @@ body .websiteLink:visited {
   body header .nav {
     padding: 20px 20px;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 40px;
     height: -moz-fit-content;
     height: fit-content;
     display: flex;
@@ -918,7 +919,7 @@ body .websiteLink:visited {
 
   body header .headerContent .center h1 {
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 22px;
   }
 
   body header .headerContent .center h1 span {
