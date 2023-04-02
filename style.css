@@ -984,6 +984,7 @@ body .websiteLink:visited {
     font-weight: 500;
     position: relative;
   }
+
   #photoRow {
     display: none;
   }
@@ -1317,4 +1318,8 @@ body .websiteLink:visited {
   object-position: top;
   margin-left: -7%;
   z-index: 2;
+}
+
+.minWidth-100 {
+  min-width: 100%;
 }

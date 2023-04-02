@@ -146,8 +146,8 @@ async function getCreators(url) {
             }
             // const photoRow = document.getElementById("photoRow");
             let divRow = document.createElement('div');
-            divRow.setAttribute('class', 'row');
-            // divRow.setAttribute('class', 'item');
+            divRow.setAttribute('class', 'row minWidth-100');
+            // divRow.setAttribute('class', '');
             // divRow.setAttribute('class', 'creatorCard');
             divRow.setAttribute('id', 'photoRow');
             divRow.innerHTML = `
@@ -202,11 +202,11 @@ async function getCreators(url) {
             `;
             // console.log(`Group ${i + 1}: ${group}`);
             // console.log(divRow);
-            document.getElementById("photoRow").appendChild(divRow)
+            document.getElementById("innerPcContainer").appendChild(divRow)
             // let test = document.createElement('img')
             // test.setAttribute('src', group[0].creator_img)
             // document.getElementById("carousel-inner").appendChild(test)
-            break;
+            // break;
         }
     }
 
@@ -222,29 +222,34 @@ async function getCreators(url) {
     }
 }
 
-// let i = 1;
-// if (screen.width > "768") {
-//     setInterval(() => {
-//         let innerPhotoContainer = document.getElementById("innerPhotoContainer");
-//         if (i === creatorsArray.length - 2) {
-//             i = 1;
-//         } else {
-//             innerPhotoContainer.style.transform = `translateX(${-400 * i}px )`;
-//             i++;
-//         }
-//     }, 5000);
-// } else {
-//     setInterval(() => {
-//         let innerPhotoContainer = document.getElementById("innerPhotoContainer");
-//         if (i === creatorsArray.length - 2) {
-//             i = 1;
-//         } else {
-//             innerPhotoContainer.style.transform = `translateX(${-200 * i}px )`;
-//             i++;
-//         }
-//     }, 5000);
+let i = 1;
+if (screen.width > "768") {
+    setInterval(() => {
+        let innerPhotoContainer = document.getElementById("innerPcContainer");
+        if (i ===  Math.ceil(creatorsArray.length / 9) ) {
+            innerPhotoContainer.scrollLeft = -window.innerWidth-100
+            i = 1
+            // console.log("ggs1");
+        } else {
+            // console.log("ggs2");
+            // innerPhotoContainer.style.transform = `translateX(${200 * i}px )`;
+            // window.scrollBy("200px")
+            innerPhotoContainer.scrollLeft += window.innerWidth-100
+            i++;
+        }
+    }, 2000);
+} else {
+    setInterval(() => {
+        let innerPhotoContainer = document.getElementById("innerPhotoContainer");
+        if (i === creatorsArray.length - 2) {
+            i = 1;
+        } else {
+            innerPhotoContainer.style.transform = `translateX(${-200 * i}px )`;
+            i++;
+        }
+    }, 5000);
 
-// }
+}
 
 function isDesktop() {
     let details = navigator.userAgent;
