@@ -295,6 +295,7 @@ body header .headerContent .center {
 }
 
 body header .headerContent .center h1 {
+  margin-top: 20px;
   margin-bottom: 20px;
   font-size: 30px;
   text-align: center;
@@ -918,6 +919,7 @@ body .websiteLink:visited {
   }
 
   body header .headerContent .center h1 {
+    margin-top: 0;
     margin-bottom: 10px;
     font-size: 22px;
   }
